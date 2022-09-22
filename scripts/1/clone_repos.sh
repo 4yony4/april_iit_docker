@@ -1,7 +1,7 @@
 echo "CLONNING ALL REPOS"
 
 cd ~/Dev2/ROS2
-git clone --branch galactic-dev git@gitlab.iit.it:cognitiveInteraction/april_ros2.git
+git clone --branch galactic-dev https://github.com/YonyIIT/april_ros2.git
 git clone --branch galactic https://github.com/ros2/common_interfaces.git
 git clone --branch galactic https://github.com/ros-perception/vision_opencv.git
 git clone --branch galactic https://github.com/ros-perception/image_common.git
