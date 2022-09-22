@@ -11,9 +11,9 @@ cd ~/Dev2/ROS2/april_bridge/src
 git clone https://github.com/ros2/ros1_bridge.git
 
 cd ~/Dev2/ROS
-git clone git@gitlab.iit.it:cognitiveInteraction/yarp_ros_ws.git
+git clone https://github.com/YonyIIT/yarp_ros_ws.git
 
 
 cd ~/Dev2/yarp
-git clone git@gitlab.iit.it:cognitiveInteraction/yarp_ros_talker.git
+git clone https://github.com/YonyIIT/yarp_ros_talker.git
 
