@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ros1:
+    build: ./april_ros1/.
+
+  ros2:
+    build: ./april_ros2/.
+
+  bridge:
+    #image: ros:galactic-ros1-bridge
+    build: ./april_bridge/.
+    environment:
+      - "ROS_HOSTNAME=bridge"
+      - "ROS_MASTER_URI=http://ros1:11311"
+    command: ros2 run ros1_bridge dynamic_bridge

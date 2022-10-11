@@ -10,7 +10,6 @@ RUN apt-get update && \
 
 # install app
 COPY ../scripts/ /scripts/
-RUN cd /scripts/ && /bin/bash -c "source ros2_install.sh" 
-RUN cd /scripts/april_ros2 && /bin/bash -c "source april_ros_build.sh" 
-RUN cd /scripts/april_ros2 && /bin/bash -c "source april_ros_run.sh" 
-
+#RUN cd /scripts/ && /bin/bash -c "source 1_first_time_april_total_deploy.sh" 
+RUN cd /scripts/ && /bin/bash -c "source bridge_install.sh" 
+#RUN cd /scripts/ && /bin/bash -c "cd /Dev/ROS2/april_bridge;source install/local_setup.bash;export ROS_MASTER_URI=http://localhost:11311; ros2 run ros1_bridge dynamic_bridge; exec bash -i" 
