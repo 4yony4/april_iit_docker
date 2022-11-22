@@ -1,9 +1,0 @@
-mkdir /Dev
-mkdir /Dev/ROS
-mkdir /Dev/ROS/april_ros
-mkdir /Dev/ROS/april_ros/src
-mkdir /Dev/ROS/april_ros/src/april_msgs
-mkdir /Dev/ROS2
-#mkdir /Dev/yarp
-mkdir /Dev/ROS2/april_bridge
-mkdir /Dev/ROS2/april_bridge/src
