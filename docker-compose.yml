@@ -3,14 +3,42 @@ version: '3'
 services:
   ros1:
     build: ./april_ros1/.
-
-  ros2:
-    build: ./april_ros2/.
-
-  bridge:
-    #image: ros:galactic-ros1-bridge
-    build: ./april_bridge/.
     environment:
-      - "ROS_HOSTNAME=bridge"
+      - "ROS_HOSTNAME=ros1"
+    volumes:
+    - vros1:/Dev
+
+  sim_sem:
+    build: ./sim_sem/.
+    volumes:
+    - vsim_sem:/Dev
+    
+  yarp_bridge:
+    build: ./yarp_bridge/.
+    environment:
+  #    - "ROS_HOSTNAME=yarp_bridge"
       - "ROS_MASTER_URI=http://ros1:11311"
-    command: ros2 run ros1_bridge dynamic_bridge
+    volumes:
+    - vyarp_bridge:/Dev
+
+  ros_bridge:
+    image: ros:galactic-ros1-bridge
+    build: ./ros_bridge/.
+    environment:
+      #- "ROS_HOSTNAME=ros_bridge"
+      - "ROS_MASTER_URI=http://ros1:11311"
+    #entrypoint: ["tail", "-f", "/dev/null"]
+    volumes:
+    - vros_bridge:/Dev
+    
+    #command: ["/bin/bash"]
+    #command: ros2 run ros1_bridge dynamic_bridge --bridge-all-pairs"
+volumes:
+  vros1:
+    external: false
+  vsim_sem:
+    external: false
+  vros_bridge:
+    external: false
+  vyarp_bridge:
+    external: false
